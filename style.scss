@@ -26,21 +26,37 @@ html{
     gap:$gap;
 }
 
+@mixin smallStyling(){
+    font-size:1.2rem;
+    font-weight:bold;
+    color:#4A4A4A;
+}
+
 @mixin flexRow($gap:0rem){
     display:flex;
     flex-direction:row;
     gap:$gap;
 }
 
+@mixin headingStyling(){
+    font-size:3rem;
+    font-weight:bold;
+}
+
+@mixin paraStyling(){
+    font-size:1.3rem;
+    color:#4A4A4A;
+}
+
 main{
     width:100%;
-    @include flexColumn(2rem);
+    @include flexColumn();
 
     section.view1{
         @include flexColumn(7.2rem);
         justify-content:space-evenly;
         align-items:center;
-        padding:5rem 3rem;
+        padding:4rem 3rem;
         width:100%;
         background:linear-gradient(to top,rgba(237, 128, 147, 0.17) 10%,rgba(0, 204, 255, 0.119));
 
@@ -50,7 +66,7 @@ main{
                 width:100%;
             }
             .first{
-                padding:0rem 3rem;
+                padding:0rem 2.5rem;
                 font-weight:bold;
                 font-size:3rem;
             }
@@ -61,7 +77,143 @@ main{
         .second{
             font-weight:lighter;
             width:100%;
-            font-size:2.5rem;
+            font-size:2.4rem;
+        }
+    }
+
+    section.view2{
+        @include flexColumn(3rem);
+        width:100%;
+        padding:4rem 3rem;
+
+        .community,.events,.packages{
+            @include flexColumn(3.5rem);
+
+            .top{
+                @include flexColumn(2rem);
+                hr{
+                    border:0.1rem solid rgba(0, 0, 0, 0.237);
+                }
+                h1{
+                    font-size:1.5rem;
+                }
+                p{
+                    font-size:1.2rem;
+                    opacity:0.8;
+                    width:90%;
+                }
+            }
+            .img{
+                width:70%;
+            }
+        }
+    }
+
+    section.view3{
+        @include flexColumn();
+        padding:4rem 3rem;
+        width:100%;
+        align-items:center;
+
+        .top{
+            img{
+                width:100%;
+            }
+        }
+
+        .bottom{
+            @include flexColumn(1.5rem);
+            small{
+                @include smallStyling();
+            }
+            h1{
+                @include headingStyling();
+            }
+            p{
+                @include paraStyling();
+            }
+
+            .buttons{
+                @include flexColumn(1.3rem);
+                width:100%;
+
+                small{
+                    color:#4A4A4A;
+                }
+
+                .joinButton{
+                    cursor:pointer;
+                    padding:0.8rem 1em;
+                    width:50%;
+                    font-weight:bolder;
+                    border-radius:5rem;
+                    background:transparent;
+                    border:1px solid #0468D7;
+                    outline:none;
+                    color:#0468D7;
+                    transition:all 0.25s ease-in-out;
+                }
+
+                .joinButton:hover{
+                    background-color:#0468D7;
+                    color:white;
+                }
+
+                .moreButton{
+                    cursor:pointer;
+                    border:none;
+                    outline:none;
+                    @include flexRow();
+                    padding:0rem 0.5rem;
+                    align-items:center;
+                    background:transparent;
+
+                    p,i{
+                        font-weight:bolder;
+                        text-align:center;
+                    }
+                    p{
+                        font-size:1rem;
+                    }
+                }
+            }
+        }
+    }
+
+    section.view4{
+        @include flexColumn(1.5rem);
+        padding:4rem 3rem;
+        width:100%;
+        background:linear-gradient(to up,#FCFCE2 90%,white);
+
+        .top{
+            img{
+                width:100%;
+            }
+        }
+        .bottom{
+            @include flexColumn(1.5rem);
+            small{
+                @include smallStyling();
+            }
+            h1{
+                @include headingStyling();
+            }
+            p{
+                @include paraStyling();
+            }
+            button{
+                cursor:pointer;
+                padding:0.8rem 1em;
+                width:50%;
+                font-weight:bolder;
+                border-radius:5rem;
+                background:transparent;
+                border:none;
+                outline:none;
+                background-color:#0468D7;
+                color:white;
+            }
         }
     }
 }
@@ -69,6 +221,8 @@ main{
 @media(min-width:900px){
     main{
         section.view1{
+            background-color:linear-gradient(to right,rgba(237, 128, 147, 0.17) 40%,rgba(0, 204, 255, 0.119) 60%);
+            padding:3rem 8rem;
             .top{
                 @include flexRow();
                 flex-direction:row-reverse;
@@ -81,8 +235,67 @@ main{
                 align-items:center;
             }
             .second{
-                padding:0rem 6rem;
+                padding:0rem 7rem;
                 font-size:2rem;
+            }
+        }
+
+        section.view2{
+            @include flexRow(1.5rem);
+            justify-content:center;
+            
+            .community,.events,.packages{
+                width:23%;
+            }
+        }
+
+        section.view3{
+            @include flexRow(1rem);
+            flex-direction:row-reverse;
+            justify-content:center;
+            align-items:center;
+            padding:3rem 8rem;
+            .top,.bottom{
+                width:50%;
+            }
+
+            .bottom{
+                gap:1.8rem;
+                width:50%;
+                p{
+                    width:75%;
+                    color:#4A4A4A;
+                }
+                .buttons{
+                    @include flexRow(0.5rem);
+                    .joinButton{
+                        font-size:0.84rem;
+                        padding:0.6rem 0.5rem;
+                        width:40%;
+                    }
+                    .moreButton{
+                        width:50%;
+                        p,i{
+                            color:black;
+                            font-size:0.84rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        section.view4{
+            @include flexRow(3rem);
+            align-items:center;
+            padding:3rem 8rem;
+            background: linear-gradient(to right,#FCFCE2,white);
+
+            .top,.bottom{
+                width:50%;
+            }
+
+            .bottom{
+                padding:0rem 3rem;
             }
         }
     }
