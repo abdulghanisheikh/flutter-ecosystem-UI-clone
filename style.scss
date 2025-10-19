@@ -270,7 +270,7 @@ main{
 
                 .readButton{
                     @include flexRow(0.2rem);
-                    width:100%;
+                    width:fit-content;
                     align-items:center;
                     background:transparent;
                     color:white;

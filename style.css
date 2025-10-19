@@ -264,7 +264,8 @@ main section.view7 .text .buttons .readButton {
   display: flex;
   flex-direction: row;
   gap: 0.2rem;
-  width: 100%;
+  width: -moz-fit-content;
+  width: fit-content;
   align-items: center;
   background: transparent;
   color: white;
