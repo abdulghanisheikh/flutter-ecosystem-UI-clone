@@ -80,7 +80,6 @@ main{
             font-size:2.4rem;
         }
     }
-
     section.view2{
         @include flexColumn(3rem);
         width:100%;
@@ -108,7 +107,6 @@ main{
             }
         }
     }
-
     section.view3{
         @include flexColumn();
         padding:4rem 3rem;
@@ -179,7 +177,6 @@ main{
             }
         }
     }
-
     section.view4,section.view5,section.view6{
         @include flexColumn(1.5rem);
         padding:4rem 3rem;
@@ -289,6 +286,70 @@ main{
             }
         }
     }
+    section.view8{
+        @include flexColumn(8rem);
+        background-color:#F8F9FA;
+        padding:3rem 3rem;
+        width:100%;
+
+        .top{
+            @include flexColumn(2.5rem);
+
+            aside{
+                img{
+                    width:50%;
+                    border-radius:100%;
+                }
+            }
+
+            .about,.learn,.platform{
+                @include flexColumn(0.6rem);
+                padding:0rem 2rem;
+
+                h1,h2{
+                    font-size: 1.2rem;
+                }
+                h2{
+                    font-weight:400;
+                    color:#4A4A4A;
+                }
+            }
+        }
+        .bottom{
+            @include flexColumn(2rem);
+            padding:2rem 1.5rem;
+            .icons{
+                @include flexRow();
+                justify-content:space-around;
+                color:#4A4A4A;
+                i{
+                    font-size: 1.5rem;
+                    font-weight:400;
+                }
+            }
+            hr{
+                border-top:0.1px solid #4a4a4aa0;
+            }
+            .text{
+                @include flexColumn(1.4rem);
+                text-align:center;
+                p{
+                    color:rgba(0, 0, 0, 0.703);
+                    width:100%;
+                    font-size:1.2rem;
+                    font-weight:400;
+                }
+                div{
+                    @include flexRow(1.5rem);
+                    width:100%;
+                    justify-content:center;
+                    font-size:1.4rem;
+                    font-weight:400;
+                    color:rgba(0, 0, 0, 0.703);
+                }
+            }
+        }
+    }
 }
 
 @media(min-width:900px){
@@ -312,7 +373,6 @@ main{
                 font-size:2rem;
             }
         }
-
         section.view2{
             @include flexRow(1.5rem);
             justify-content:center;
@@ -321,7 +381,6 @@ main{
                 width:23%;
             }
         }
-
         section.view3{
             @include flexRow(1rem);
             flex-direction:row-reverse;
@@ -356,7 +415,6 @@ main{
                 }
             }
         }
-
         section.view4,section.view5,section.view6{
             @include flexRow(3rem);
             align-items:center;
@@ -400,10 +458,12 @@ main{
             .text{
                 padding:4rem 5rem;
                 border-radius:3rem;
-                gap:1rem;
+                gap:1.3rem;
 
                 .buttons{
                     @include flexRow(2rem);
+                    justify-content: flex-start;
+
                     .installButton{
                         width:fit-content;
                         padding:0.6rem 2rem;
@@ -412,6 +472,67 @@ main{
                     .readButton{
                         p,i{
                             font-size:small;
+                        }
+                    }
+                }
+            }
+        }
+        section.view8{
+            gap:2rem;
+            .top{
+                display:grid;
+                grid-template-columns:40% 1fr 1fr 1fr;
+                grid-template-areas:"aside about learn platform";
+                padding:2rem 3rem;
+
+                aside{
+                    grid-area:aside;
+                    img{
+                        width:30%;
+                    }
+                }
+                .about{
+                    grid-area: about;
+                }
+                .learn{
+                    grid-area: learn;
+                }
+                .platform{
+                    grid-area: platform;
+                }
+                .about,.learn,.platform{
+                    h1,h2{
+                        font-size:0.9rem;
+                    }
+                }
+            }
+            .bottom{
+                padding:1.5rem 0rem;
+                .icons{
+                    justify-content:flex-start;
+                    gap:1.7rem;
+                    i{
+                        font-size:1rem;
+                        font-weight:300;
+                    }
+                }
+                hr{
+                    width:97.5%;
+                }
+                .text{
+                    @include flexRow(4rem);
+                    padding:1.7rem 0rem;
+                    justify-content:space-between;
+                    width:100%;
+                    text-align:start;
+                    p{
+                        font-size: 0.83rem;
+                        width: 80%;
+                    }
+                    div{
+                        width:20%;
+                        small{
+                            font-size: 0.83rem;
                         }
                     }
                 }

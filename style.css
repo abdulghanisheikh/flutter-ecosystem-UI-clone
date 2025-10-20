@@ -281,6 +281,78 @@ main section.view7 .text .buttons .readButton p, main section.view7 .text .butto
 main section.view7 .text .buttons .readButton:hover {
   gap: 0.5rem;
 }
+main section.view8 {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+  background-color: #F8F9FA;
+  padding: 3rem 3rem;
+  width: 100%;
+}
+main section.view8 .top {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+main section.view8 .top aside img {
+  width: 50%;
+  border-radius: 100%;
+}
+main section.view8 .top .about, main section.view8 .top .learn, main section.view8 .top .platform {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0rem 2rem;
+}
+main section.view8 .top .about h1, main section.view8 .top .about h2, main section.view8 .top .learn h1, main section.view8 .top .learn h2, main section.view8 .top .platform h1, main section.view8 .top .platform h2 {
+  font-size: 1.2rem;
+}
+main section.view8 .top .about h2, main section.view8 .top .learn h2, main section.view8 .top .platform h2 {
+  font-weight: 400;
+  color: #4A4A4A;
+}
+main section.view8 .bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 1.5rem;
+}
+main section.view8 .bottom .icons {
+  display: flex;
+  flex-direction: row;
+  gap: 0rem;
+  justify-content: space-around;
+  color: #4A4A4A;
+}
+main section.view8 .bottom .icons i {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+main section.view8 .bottom hr {
+  border-top: 0.1px solid rgba(74, 74, 74, 0.6274509804);
+}
+main section.view8 .bottom .text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  text-align: center;
+}
+main section.view8 .bottom .text p {
+  color: rgba(0, 0, 0, 0.703);
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+main section.view8 .bottom .text div {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  width: 100%;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.703);
+}
 
 @media (min-width: 900px) {
   main section.view1 {
@@ -390,12 +462,13 @@ main section.view7 .text .buttons .readButton:hover {
   main section.view7 .text {
     padding: 4rem 5rem;
     border-radius: 3rem;
-    gap: 1rem;
+    gap: 1.3rem;
   }
   main section.view7 .text .buttons {
     display: flex;
     flex-direction: row;
     gap: 2rem;
+    justify-content: flex-start;
   }
   main section.view7 .text .buttons .installButton {
     width: -moz-fit-content;
@@ -405,5 +478,65 @@ main section.view7 .text .buttons .readButton:hover {
   }
   main section.view7 .text .buttons .readButton p, main section.view7 .text .buttons .readButton i {
     font-size: small;
+  }
+  main section.view8 {
+    gap: 2rem;
+  }
+  main section.view8 .top {
+    display: grid;
+    grid-template-columns: 40% 1fr 1fr 1fr;
+    grid-template-areas: "aside about learn platform";
+    padding: 2rem 3rem;
+  }
+  main section.view8 .top aside {
+    grid-area: aside;
+  }
+  main section.view8 .top aside img {
+    width: 30%;
+  }
+  main section.view8 .top .about {
+    grid-area: about;
+  }
+  main section.view8 .top .learn {
+    grid-area: learn;
+  }
+  main section.view8 .top .platform {
+    grid-area: platform;
+  }
+  main section.view8 .top .about h1, main section.view8 .top .about h2, main section.view8 .top .learn h1, main section.view8 .top .learn h2, main section.view8 .top .platform h1, main section.view8 .top .platform h2 {
+    font-size: 0.9rem;
+  }
+  main section.view8 .bottom {
+    padding: 1.5rem 0rem;
+  }
+  main section.view8 .bottom .icons {
+    justify-content: flex-start;
+    gap: 1.7rem;
+  }
+  main section.view8 .bottom .icons i {
+    font-size: 1rem;
+    font-weight: 300;
+  }
+  main section.view8 .bottom hr {
+    width: 97.5%;
+  }
+  main section.view8 .bottom .text {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    padding: 1.7rem 0rem;
+    justify-content: space-between;
+    width: 100%;
+    text-align: start;
+  }
+  main section.view8 .bottom .text p {
+    font-size: 0.83rem;
+    width: 80%;
+  }
+  main section.view8 .bottom .text div {
+    width: 20%;
+  }
+  main section.view8 .bottom .text div small {
+    font-size: 0.83rem;
   }
 }/*# sourceMappingURL=style.css.map */
